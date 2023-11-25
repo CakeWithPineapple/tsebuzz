@@ -170,41 +170,6 @@ export class TypedEventBus {
     this.eventHistory[eventName].push(event);
   }
 
-  debounce<T>(eventName: string, listener: Listener<T>, delay: number): Unsubscribe {
-    let timeoutId: number | undefined;
-
-    const clearDebounce = () => {
-      if (timeoutId !== undefined) {
-        clearTimeout(timeoutId);
-        timeoutId = undefined;
-      }
-    };
-
-    const debouncedListener: Listener<T> = (event) => {
-      clearDebounce();
-
-      timeoutId = setTimeout(() => {
-        listener(event);
-        clearDebounce();
-      }, delay) as any; // Cast to 'any' to handle the potential mismatch
-    };
-
-    let unsubscribe = this.on(eventName, debouncedListener);
-
-    // Clear timeout on unsubscribe
-    const originalUnsubscribe = unsubscribe;
-    unsubscribe = () => {
-      clearDebounce();
-      originalUnsubscribe();
-    };
-
-    return unsubscribe;
-  }
-
-  setEventMetadata<T>(eventName: string, metadata: EventMetadata): void {
-    this.emit(eventName, metadata as T);
-  }
-
   unsubscribe<T>(eventName: string, listener: Listener<T>): void {
     const listeners = this.listeners[eventName];
     if (listeners) {
