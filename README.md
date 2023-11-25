@@ -31,7 +31,7 @@ const eventBus = new TypedEventBus();
 
 ```typescript
 // Subscribe to a specific event
-const unsubscribe = eventBus.on('eventName', (event) =\> {
+const unsubscribe = eventBus.on('eventName', (event) => {
   console.log(`Event received: ${event}`);
 });
 
@@ -48,7 +48,7 @@ eventBus.emit('eventName', eventData);
 
 ### Error handling
 ```typescript
-  eventBus.setErrorHandler((error) =\> {
+  eventBus.setErrorHandler((error) => {
     console.error(`Error in event listener: ${error.message}`);
   });
 ```
