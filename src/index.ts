@@ -122,19 +122,19 @@ export class TypedEventBus {
     return this.on(eventName, filteredListener);
   }
 
-  throttle<T>(eventName: string, listener: Listener<T>, throttleTime: number): Unsubscribe {
-    let lastInvokeTime = 0;
+  // throttle<T>(eventName: string, listener: Listener<T>, throttleTime: number): Unsubscribe {
+  //   let lastInvokeTime = 0;
 
-    const throttledListener: Listener<T> = (event) => {
-        const now = Date.now();
-        if (now - lastInvokeTime >= throttleTime) {
-            listener(event);
-            lastInvokeTime = now;
-        }
-    };
+  //   const throttledListener: Listener<T> = (event) => {
+  //       const now = Date.now();
+  //       if (now - lastInvokeTime >= throttleTime) {
+  //           listener(event);
+  //           lastInvokeTime = now;
+  //       }
+  //   };
 
-    return this.on(eventName, throttledListener);
-  }
+  //   return this.on(eventName, throttledListener);
+  // }
 
   replay<T>(eventName: string, listener: Listener<T>): Unsubscribe {
     const pastEvents = this.eventHistory[eventName] || [];
