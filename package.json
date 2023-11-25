@@ -1,6 +1,6 @@
 {
-  "name": "tsebuzz",
-  "version": "1.0.3",
+  "name": "@hikelibs/tsebuzz",
+  "version": "1.0.4",
   "description": "TypeScript event bus.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

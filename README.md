@@ -1,6 +1,6 @@
-# Tsebuzz - TypeScript Event Bus Library
+# @hikelibs/tsebuzz - TypeScript Event Bus Library
 
-Tsebuzz is a lightweight TypeScript library for implementing an event bus pattern. It allows different applications to communicate by emitting and listening to events.
+`tsebuzz` is a lightweight TypeScript library for implementing an event bus pattern. It allows different applications to communicate by emitting and listening to events.
 
 ## Features
 
@@ -14,7 +14,7 @@ Tsebuzz is a lightweight TypeScript library for implementing an event bus patter
 ## Installation
 
 ```bash 
-npm install tsebuzz
+npm install @hikelibs/tsebuzz
 ```
 
 ## Basic Usage
@@ -22,7 +22,7 @@ npm install tsebuzz
 ### Creating an Event Bus instance
 
 ```typescript
-import { TypedEventBus } from 'tsebuzz';
+import { TypedEventBus } from '@hikelibs/tsebuzz';
 
 const eventBus = new TypedEventBus();
 ```
